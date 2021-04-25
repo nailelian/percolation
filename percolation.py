@@ -145,7 +145,10 @@ class PercolationTools(object):
             return self.find_critical_value_bs(iter_sim, iter_search, l, p, m+1)
 
 #fig, ax = plt.subplots()
+
 #testing rafael
+#test anna
+
 #P = Percolation(np.zeros((10,10)))
 #P.percolate(0.5)
 #PT = PercolationTools(P)
