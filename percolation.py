@@ -163,6 +163,9 @@ class PercolationTools(object):
 
 #fig, ax = plt.subplots()
 
+#testing rafael
+#test anna
+
 #P = Percolation(np.zeros((10,10)))
 #P.percolate(0.5)
 #PT = PercolationTools(P)
