@@ -34,7 +34,7 @@ class Percolation(object):
         if col - 1 > 0 and self.lattice[row][col-1] == 1:
             success, visited = self.is_path_rec(row, col-1, visited)
             if success: return True, visited
-        if col + 1< self.n and self.lattice[row][col+1] == 1:
+        if col + 1 < self.n and self.lattice[row][col+1] == 1:
             success, visited = self.is_path_rec(row, col+1, visited)
             if success: return True, visited
 
@@ -68,11 +68,11 @@ class Percolation(object):
                 n_True += 1
         return n_True / iter
 
-    def is_centre_path_rec(self):
+#    def is_centre_path_rec(self):
 
     def is_centre_path(self):
         if self.n % 2 == 0: return None
-        
+
 
 class TriPercolation(Percolation):
     def is_path_rec(self, row, col, visited):
@@ -109,14 +109,18 @@ class TriPercolation(Percolation):
         return False, visited
 
 class PercolationSophisticated(Percolation):
-    def percolate(self, p):
+    def percolate_rand(self, p):
         self.reset()
         for i in range(0,self.n):
             for j in range(0,self.n):
-                self.update_lattice(i,j,np.random.binomial(1, p)) # this needs to be a uniform random number
+                self.update_lattice(i,j,random())
+                if self.lattice[i][j] < p:
+                    self.lattice[i][j] = 1
+                else:
+                    self.lattice[i][j] = 0
         return self.lattice
 
-    def find_critical_value():
+    #def find_critical_value():
 
 
 class PercolationTools(object):
